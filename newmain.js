@@ -10,17 +10,6 @@
     S       P --
     S       R -- */
 
-    function getRandomInt(max){
-        return Math.floor(Math.random()*max)
-    }
-    
-    let randomInt = getRandomInt(3)
-    console.log(randomInt)
-    
-    let randomComputerMove = possibleComputerMoves[randomInt]
-
-    console.log(`The computer chose ${randomComputerMove}`)
-
     function getWinner(playerMove, computerMove){
         if (playerMove === "rock" && computerMove === "paper"){
     //console.log("Player had rock, computer had paper. Computer wins")
@@ -52,4 +41,24 @@
     }
     }
 
-   alert(getWinner(prompt(`Type Rock, Paper, or Scissors.`), randomComputerMove))
+    function getRandomInt(max){
+        return Math.floor(Math.random()*max)
+    }
+
+    let wantsToKeepPlaying = true;
+
+    while (wantsToKeepPlaying === true){
+    let randomInt = getRandomInt(3)
+    console.log(randomInt)
+    
+    let randomComputerMove = possibleComputerMoves[randomInt]
+    console.log(`The computer chose ${randomComputerMove}`)
+
+let userInput = prompt(`Type rock, paper, or scissors.`);
+console.log(`The player chose ${userInput}`);
+   alert(getWinner(userInput, randomComputerMove));
+
+   if (confirm(`Would you like to play again?`) === false){
+    wantsToKeepPlaying = false;
+   }
+    }
