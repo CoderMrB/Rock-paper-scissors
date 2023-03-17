@@ -1,6 +1,6 @@
 // let hardCodedPlayerMove = "rock";
- let hardCodedComputerMove = "rock";
-
+// let hardCodedComputerMove = "rock";
+    let possibleComputerMoves = [`rock`, `paper`, `scissors`]
 /*
     com     player
     R       p --
@@ -9,6 +9,17 @@
     P       S --
     S       P --
     S       R -- */
+
+    function getRandomInt(max){
+        return Math.floor(Math.random()*max)
+    }
+    
+    let randomInt = getRandomInt(3)
+    console.log(randomInt)
+    
+    let randomComputerMove = possibleComputerMoves[randomInt]
+
+    console.log(`The computer chose ${randomComputerMove}`)
 
     function getWinner(playerMove, computerMove){
         if (playerMove === "rock" && computerMove === "paper"){
@@ -41,4 +52,4 @@
     }
     }
 
-   alert(getWinner(prompt(`Type Rock, Paper, or Scissors.`), hardCodedComputerMove))
+   alert(getWinner(prompt(`Type Rock, Paper, or Scissors.`), randomComputerMove))
