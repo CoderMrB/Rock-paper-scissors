@@ -56,6 +56,22 @@
         return Math.floor(Math.random()*max)
     }
 
+    let isValidUsername = false
+
+    while (isValidUsername === false){
+
+        let username = prompt(`Please enter a username up to 10 characters in length.`)
+
+        console.log(typeof(username.charAt(0)))
+        
+        if (username.length < 10) {
+            if (username.charAt(0) !== `0` || username.charAt(0) !== `1` || username.charAt(0) !== `2`){
+                isValidUsername = true
+            }
+        }
+
+    }
+
     let wantsToKeepPlaying = true;
 
     while (wantsToKeepPlaying === true){
