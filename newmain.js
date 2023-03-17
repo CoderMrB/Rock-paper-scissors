@@ -18,37 +18,37 @@
         if (playerMove === "rock" && computerMove === "paper"){
     //console.log("Player had rock, computer had paper. Computer wins")
     playerLosses ++;
-    return -1;
+    return 'You lose';
 }
     else if(playerMove === "paper" && computerMove === "scissors"){
         //console.log("Player had paper, computer had scissors. Computer wins")
         playerLosses ++;
-        return -1;
+        return 'You lose';
     }
     else if(playerMove === "scissors" && computerMove === "rock"){
         //console.log("Player had scissors, computer had rock. Computer wins")
         playerLosses ++;
-        return -1;
+        return 'You lose';
     }
     else if(playerMove === "scissors" && computerMove === "paper"){
         //console.log("Player had scissors, computer had paper. Player wins")
         playerWins ++;
-        return 1;
+        return 'You win';
     }
     else if(playerMove === "rock" && computerMove === "scissors"){
         //console.log("Player had rock, computer had scissors. Player wins")
         playerWins ++;
-        return 1;
+        return 'You win';
     }
     else if(playerMove === "paper" && computerMove === "rock"){
         //console.log("Player had paper, computer had rock. Player wins")
         playerWins ++;
-        return 1;
+        return 'You win';
     }
     else if(playerMove === computerMove){
         //console.log("Player and computer had the same thing. It's a draw!")
         playerDraws ++;
-        return 0;
+        return "It's a draw";
     }
     }
 
