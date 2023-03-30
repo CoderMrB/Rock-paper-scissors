@@ -1,13 +1,13 @@
 /*
 Rock paper scissors game.
-Take players name as input
-    Have an input field on the page
-    Have a submit button
-    Add event listener to submit button
-    Have a function activated by clicking submit button
-    Function should take text from input field and store in on the page.
-    Push this text to an empty p element
-    If possible the input field and button should then be hidden
+Take players name as input☑️
+    Have an input field on the page☑️
+    Have a submit button☑️
+    Add event listener to submit button☑️
+    Have a function activated by clicking submit button☑️
+    Function should take text from input field and store in on the page.☑️
+    Push this text to an empty h3 element☑️
+    If possible the input field and button should then be hidden☑️
 Display player's name
 Declare variables to hold scores for player and computer
 Take a user's input for Rock, Paper, Scissors
@@ -31,7 +31,8 @@ const displayName = document.querySelector("#displayName");
 function respondToName(){
     let nameField = document.querySelector("#userNameField").value//Declares variable to hold value typed to input box
     displayName.textContent = `Thanks for coming to play me at rock, paper, scissors ${nameField}!`//Makes welcome message using user's name appear
-    document.querySelector("#userNameField").style.visibility = 'hidden'//hides input box label
-    document.querySelector("#userName").style.visibility = 'hidden'//hides input box
-    submitNameButton.style.visibility = 'hidden'//hides button
+    const allGoAway = document.getElementsByClassName('disappear')//Targets elements I wish to disappear
+    for(const stream of allGoAway){ //hides all the elements I wish to disappear
+        stream.style.display = 'none'
+    }
 }
