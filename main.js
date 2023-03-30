@@ -19,16 +19,19 @@ Allow user to play again or end there
 If end there, display message indicating winner
 */
 
-console.log("working?")
+//Declares variable to store the HTML submit button
+let submitNameButton = document.querySelector("#submit")
+//Eventlistener added to submit button to initiate function
+submitNameButton.addEventListener("click", respondToName)
 
-let submitName = document.querySelector("#submit")
-submitName.addEventListener("click", pushName)
+//Declares variable to store the HTML H2 element that currently has no text
+const displayName = document.querySelector("#displayName");
 
-const displayName = document.querySelector("#displayName")
-
-function pushName(){
-    let nameField = document.getElementById('userName')
-    let nameEntered = nameField.value
-    // displayName.textContent = "Thanks for coming to play me at rock, paper, scissors Chris"
-    displayName.textcontent = nameEntered
+//Function to take the name typed into the input box, hide the input box, label and submit button, and display a welcome message using the user's inputted name
+function respondToName(){
+    let nameField = document.querySelector("#userNameField").value//Declares variable to hold value typed to input box
+    displayName.textContent = `Thanks for coming to play me at rock, paper, scissors ${nameField}!`//Makes welcome message using user's name appear
+    document.querySelector("#userNameField").style.visibility = 'hidden'//hides input box label
+    document.querySelector("#userName").style.visibility = 'hidden'//hides input box
+    submitNameButton.style.visibility = 'hidden'//hides button
 }
