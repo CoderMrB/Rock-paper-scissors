@@ -1,28 +1,31 @@
-let compWins = 0
-let userWins = 0
-let isValidResponse = false
+/*
+Rock paper scissors game.
+Take players name as input
+    Have an input field on the page
+    Have a submit button
+    Add event listener to submit button
+    Have a function activated by clicking submit button
+    Function should take text from input field and store in on the page.
+    Push this text to an empty p element
+    If possible the input field and button should then be hidden
+Display player's name
+Declare variables to hold scores for player and computer
+Take a user's input for Rock, Paper, Scissors
+Generate a random choice for the computer
+Compare users input against computer choice
+Record / display the winner
+Add 1 to winner's score
+Allow user to play again or end there
+If end there, display message indicating winner
+*/
 
-//Check the user inputs something valid (Rock, Paper, or Scissors).
-//The following takes in the user's input and checks it is one of Rock, Paper, or Scissors. If so, it sets isValidResponse to true and passes the input into the variable userInput. If not, it asks the user to input something valid.
-while (isValidResponse === false){
-    let userInput = prompt(`Type Rock, Paper, or Scissors.`)
+console.log("working?")
 
-    if (userInput === `Rock` || userInput === `Paper` || userInput === `Scissors`) {
-        console.log(`User has entered valid response.`)
-        isValidResponse = true
-    }
+let submitName = document.querySelector("#submit")
+submitName.addEventListener("click", pushName)
 
-    else {
-        console.log(`User has entered invalid response.`)
-        alert(`That was an ivalid response. Please input "Rock", "Paper", or "Scissors".`)
-    }
+const displayName = document.querySelector("#displayName")
+
+function pushName(){
+    displayName.textContent = "Chris"
 }
-
-//The following What beats what?
-// If the user's input is set to paper and the computer's input is set to scissors, 
-// compare user's input against the 
-/* let rules = [
-    [`rock`, `scissors`],
-    [`scissors`, `paper`],
-    [`paper`, `rock`]
-]*/
