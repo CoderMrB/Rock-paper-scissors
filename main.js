@@ -27,5 +27,8 @@ submitName.addEventListener("click", pushName)
 const displayName = document.querySelector("#displayName")
 
 function pushName(){
-    displayName.textContent = "Chris"
+    let nameField = document.getElementById('userName')
+    let nameEntered = nameField.value
+    // displayName.textContent = "Thanks for coming to play me at rock, paper, scissors Chris"
+    displayName.textcontent = nameEntered
 }
