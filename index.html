@@ -4,14 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> Paper. Scissors.</title>
+    <title>Rock. Paper. Scissors.</title>
   </head>
   <body>
     <h1>Rock, paper, scissors.</h1>
-    <h2 id="displayName"> </h2>
-    <label id="userName" class="disappear" for="userName">Please enter your name</label>
+    <h2 id="displayName"></h2>
+    <label id="userName" class="disappear" for="userName"
+      >Please enter your name</label
+    >
     <input type="text" id="userNameField" class="disappear" /><br /><br />
-    <button id="submit" class="disappear">Please click here to submit name</button>
+    <button id="submit" class="disappear">
+      Please click here to submit name
+    </button>
+    <p id="userScore" style="display: none"></p>
+    <p id="compScore" style="display: none"></p>
+    <label id="userChoiceLabel" style="display: none" for="useChoice"
+      >Please enter either rock, paper or scissors!</label
+    >
+    <input type="text" style="display: none" id="userChoiceField" /><br /><br />
+    <button id="userSubmitChoice" style="display: none">
+      Please click to submit your choice!
+    </button>
+    <p id="displayUserChoice" style="display: none"></p>
+    <p id="compChoice" style="display: none"></p>
 
     <script src="/bc14_w1d5_hackathon_rps-room5_chris-chris/main.js"></script>
   </body>
