@@ -24,6 +24,8 @@ Allow user to play again or end there
 If end there, display message indicating winner
 */
 
+
+//Section declaring variables
 //Declares a variable to target an empty paragraph where scores may be stored
 const userScore = document.querySelector("#userScore")
 const compScore = document.querySelector("#compScore")
@@ -48,6 +50,9 @@ const userSubmitChoiceButton = document.querySelector("#userSubmitChoice")
 userSubmitChoiceButton.addEventListener("click", submitChoice)
 const displayUserChoice = document.querySelector('#displayUserChoice')
 
+
+
+
 //Function to take the name typed into the input box, hide the input box, label and submit button, and display a welcome message using the user's inputted name
 function respondToName(){
     let nameField = document.querySelector("#userNameField").value//Declares variable to hold value typed to input box
@@ -66,19 +71,25 @@ function respondToName(){
     // generateCompScore()
 }
 
+
+
+//Function to take the users choice
 function submitChoice(){
     let userChoiceEntered = userChoiceField.value.toLowerCase()
     userChoice = userChoiceEntered
     if ((userChoice === ('rock')) || (userChoice === ('paper')) || (userChoice === 'scissors')){
     displayUserChoice.textContent = `You have chosen ${userChoice}!`
     displayUserChoice.style.display = "block"
+    generateCompChoice()
     }else{
         alert("Sorry, that wasn't a valid choice! Please try again")
         submitChoice()
     }
 }
 
-function generateCompScore(){
+
+//Function to take generate the computers choice
+function generateCompChoice(){
     let i = Math.floor(Math.random()*3)
     compChoice.textContent = (`The computer has chosen ${(compOptions[i])}`)
     compChoice.style.display = "block"
