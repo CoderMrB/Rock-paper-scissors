@@ -25,25 +25,26 @@ If end there, display message indicating winner
 */
 
 
-//Section declaring variables
-//Declares a variable to target an empty paragraph where scores may be stored
+//Variables
+
+//Score variables
 const userScore = document.querySelector("#userScore")
 const compScore = document.querySelector("#compScore")
 
-
-//Declares variable to store the HTML submit button
+//Submit button variables
 let submitNameButton = document.querySelector("#submit")
-//Eventlistener added to submit button to initiate function
 submitNameButton.addEventListener("click", respondToName)
 
-//Declares variable to store the HTML H2 element that currently has no text
+//Display name variables
 const displayName = document.querySelector("#displayName");
 
+//Computer choice variables
 const compOptions = ["Rock", "Paper", "Scissors"]
-compChoice = document.querySelector('#compChoice')
+compChoiceDisplay = document.querySelector('#compChoice')
+let compChoice=""
 
+//User choice variables
 let userChoice = ""
-
 const userChoiceLabel = document.querySelector("#userChoiceLabel")
 const userChoiceField = document.querySelector("#userChoiceField")
 const userSubmitChoiceButton = document.querySelector("#userSubmitChoice")
@@ -51,14 +52,18 @@ userSubmitChoiceButton.addEventListener("click", submitChoice)
 const displayUserChoice = document.querySelector('#displayUserChoice')
 
 
+//Result variables
+const resultDisplay = document.querySelector('#resultDisplay')
 
 
-//Function to take the name typed into the input box, hide the input box, label and submit button, and display a welcome message using the user's inputted name
+//Functions
+
+//Function to take name and respond with message
 function respondToName(){
-    let nameField = document.querySelector("#userNameField").value//Declares variable to hold value typed to input box
-    displayName.textContent = `Thanks for coming to play me at rock, paper, scissors ${nameField}!`//Makes welcome message using user's name appear
-    const allGoAway = document.getElementsByClassName('disappear')//Targets elements I wish to disappear
-    for(const stream of allGoAway){ //hides all the elements I wish to disappear
+    let nameField = document.querySelector("#userNameField").value
+    displayName.textContent = `Thanks for coming to play me at rock, paper, scissors ${nameField}!`
+    const allGoAway = document.getElementsByClassName('disappear')
+    for(const stream of allGoAway){
         stream.style.display = 'none'
     }
     userScore.textContent = "Your score is currently: 0"
@@ -68,9 +73,7 @@ function respondToName(){
     userChoiceLabel.style.display = "block"
     userChoiceField.style.display = "block"
     userSubmitChoiceButton.style.display = "block"
-    // generateCompScore()
 }
-
 
 
 //Function to take the users choice
@@ -78,20 +81,50 @@ function submitChoice(){
     let userChoiceEntered = userChoiceField.value.toLowerCase()
     userChoice = userChoiceEntered
     if ((userChoice === ('rock')) || (userChoice === ('paper')) || (userChoice === 'scissors')){
-    displayUserChoice.textContent = `You have chosen ${userChoice}!`
-    displayUserChoice.style.display = "block"
-    generateCompChoice()
+        displayUserChoice.textContent = `You have chosen ${userChoice}!`
+        displayUserChoice.style.display = "block"
+        generateCompChoice()
     }else{
         alert("Sorry, that wasn't a valid choice! Please try again")
         submitChoice()
-    }
+    } 
 }
+
 
 
 //Function to take generate the computers choice
 function generateCompChoice(){
     let i = Math.floor(Math.random()*3)
-    compChoice.textContent = (`The computer has chosen ${(compOptions[i])}`)
-    compChoice.style.display = "block"
-}
+    compChoice = compOptions[i]
+    compChoiceDisplay.textContent = (`The computer has chosen ${(compOptions[i])}`)
+    compChoiceDisplay.style.display = "block"
+    displayResult()
+    }
+    
 
+function displayResult(){
+    if (compChoice === userChoice){
+        resultDisplay.textContent = "That one was a draw!"
+        resultDisplay.style.display = "block"
+    }else{
+        resultDisplay.textContent = "Someone won!"
+        resultDisplay.style.display = "block"
+    }
+    // }else if (compChoice === "rock"){
+    //         if (userChoice === "paper"){
+    //             resultDisplay.textContent = "Paper beats rock. You won that one!"
+    //             resultDisplay.style.display = "block"
+    //         }else{
+    //             resultDisplay.textContent = "Rock beats scissors. I won that one!"
+    //             resultDisplay.style.display = "block"
+    //         } 
+    // }else{
+    //         if (userChoice === "scissors"){
+    //             resultDisplay.textContent = "Scissors beats paper. You won that one!"
+    //             resultDisplay.style.display = "block"
+    //         }else{
+    //             resultDisplay.textContent = "Paper beats rock. I won that one!"
+    //             resultDisplay.style.display = "block"
+    //             }
+    //         }
+    }
