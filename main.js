@@ -39,7 +39,7 @@ submitNameButton.addEventListener("click", respondToName)
 const displayName = document.querySelector("#displayName");
 
 //Computer choice variables
-const compOptions = ["Rock", "Paper", "Scissors"]
+const compOptions = ["rock", "paper", "scissors"]
 compChoiceDisplay = document.querySelector('#compChoice')
 let compChoice=""
 
@@ -100,31 +100,37 @@ function generateCompChoice(){
     compChoiceDisplay.style.display = "block"
     displayResult()
     }
-    
+
 
 function displayResult(){
     if (compChoice === userChoice){
         resultDisplay.textContent = "That one was a draw!"
         resultDisplay.style.display = "block"
-    }else{
-        resultDisplay.textContent = "Someone won!"
-        resultDisplay.style.display = "block"
+    }else if (compChoice === "rock"){
+            if (userChoice === "paper"){
+                resultDisplay.textContent = "Paper beats rock. You won that one!"
+                resultDisplay.style.display = "block"
+            }else{
+                resultDisplay.textContent = "Rock beats scissors. I won that one!"
+                resultDisplay.style.display = "block"
+            } 
+    }else if (compChoice === "paper"){
+            if (userChoice === "scissors"){
+                resultDisplay.textContent = "Scissors beats paper. You won that one!"
+                resultDisplay.style.display = "block"
+            }else{
+                resultDisplay.textContent = "Paper beats rock. I won that one!"
+                resultDisplay.style.display = "block"
+                }
+    }else if (compChoice === "scissors"){
+            if (userChoice === "rock"){
+                resultDisplay.textContent = "Rock beats scissors. You won that one!"
+                resultDisplay.style.display = "block"
+            }else{
+                resultDisplay.textContent = "Scissors beats paper. I won that one!"
+                resultDisplay.style.display = "block"
+            }
     }
-    // }else if (compChoice === "rock"){
-    //         if (userChoice === "paper"){
-    //             resultDisplay.textContent = "Paper beats rock. You won that one!"
-    //             resultDisplay.style.display = "block"
-    //         }else{
-    //             resultDisplay.textContent = "Rock beats scissors. I won that one!"
-    //             resultDisplay.style.display = "block"
-    //         } 
-    // }else{
-    //         if (userChoice === "scissors"){
-    //             resultDisplay.textContent = "Scissors beats paper. You won that one!"
-    //             resultDisplay.style.display = "block"
-    //         }else{
-    //             resultDisplay.textContent = "Paper beats rock. I won that one!"
-    //             resultDisplay.style.display = "block"
-    //             }
-    //         }
-    }
+}
+
+    
