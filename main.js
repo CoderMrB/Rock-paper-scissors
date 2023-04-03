@@ -28,8 +28,12 @@ If end there, display message indicating winner
 //Variables
 
 //Score variables
-const userScore = document.querySelector("#userScore")
-const compScore = document.querySelector("#compScore")
+let  userScoreLabel = document.querySelector("#userScoreLabel")
+let compScoreLabel = document.querySelector("#compScoreLabel")
+let userScore = document.querySelector("#userScore")
+let compScore = document.querySelector("#compScore")
+let currentUserScore = 0
+let currentCompScore = 0
 
 //Submit button variables
 let submitNameButton = document.querySelector("#submit")
@@ -66,9 +70,11 @@ function respondToName(){
     for(const stream of allGoAway){
         stream.style.display = 'none'
     }
-    userScore.textContent = "Your score is currently: 0"
+    userScoreLabel.style.display = "block"
     userScore.style.display = "block"
-    compScore.textContent = "My score is currently: 0"
+    userScore.textContent = currentUserScore
+    compScoreLabel.style.display = "block"
+    compScore.textContent = currentCompScore
     compScore.style.display = "block"
     userChoiceLabel.style.display = "block"
     userChoiceField.style.display = "block"
@@ -108,28 +114,35 @@ function displayResult(){
     }else if (compChoice === "rock"){
             if (userChoice === "paper"){
                 resultDisplay.textContent = "Paper beats rock. You won that one!"
+                currentUserScore++
                 resultDisplay.style.display = "block"
             }else{
                 resultDisplay.textContent = "Rock beats scissors. I won that one!"
+                currentCompScore++
                 resultDisplay.style.display = "block"
             } 
     }else if (compChoice === "paper"){
             if (userChoice === "scissors"){
                 resultDisplay.textContent = "Scissors beats paper. You won that one!"
+                currentUserScore++
                 resultDisplay.style.display = "block"
             }else{
                 resultDisplay.textContent = "Paper beats rock. I won that one!"
+                currentCompScore++
                 resultDisplay.style.display = "block"
                 }
     }else if (compChoice === "scissors"){
             if (userChoice === "rock"){
                 resultDisplay.textContent = "Rock beats scissors. You won that one!"
+                currentUserScore++
                 resultDisplay.style.display = "block"
             }else{
                 resultDisplay.textContent = "Scissors beats paper. I won that one!"
+                currentCompScore++
                 resultDisplay.style.display = "block"
             }
-    }
+    }userScore.textContent = currentUserScore
+    compScore.textContent = currentCompScore
 }
 
     
