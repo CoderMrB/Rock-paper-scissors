@@ -86,7 +86,8 @@ function submitChoice(){
         generateCompChoice()
     }else{
         alert("Sorry, that wasn't a valid choice! Please try again")
-        submitChoice()
+        userChoice = ""
+        respondToName()
     } 
 }
 
