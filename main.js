@@ -17,8 +17,8 @@ Declare variables to hold scores for player and computer☑️
 Take a user's input for Rock, Paper, Scissors☑️
 
 Generate a random choice for the computer☑️
-Compare users input against computer choice
-Record / display the winner
+Compare users input against computer choice☑️
+Record / display the winner☑️
 Add 1 to winner's score
 Allow user to play again or end there
 If end there, display message indicating winner
@@ -91,8 +91,6 @@ function submitChoice(){
     } 
 }
 
-
-
 //Function to take generate the computers choice
 function generateCompChoice(){
     let i = Math.floor(Math.random()*3)
@@ -102,7 +100,7 @@ function generateCompChoice(){
     displayResult()
     }
 
-
+//Function to determine and display who won the round
 function displayResult(){
     if (compChoice === userChoice){
         resultDisplay.textContent = "That one was a draw!"
