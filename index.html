@@ -4,9 +4,43 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="icon" href="/bc14_w1d5_hackathon_rps-room5_chris-chris/images/rpsIcon.png" type="image/icon type">
+    <link rel="stylesheet" href="styles.css">
+    <title>Rock. Paper. Scissors.</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+</style>
   </head>
   <body>
-    <script src="newmain.js"></script>
+    <div id="title">
+    <img id="rpsImage" src="images/rocku2013paperu2013scissors-clip-art-rock-paper-scissors-07dac391e0bd9261449ea3189bdeb64d.png"/>
+    <h1>Rock, paper, scissors.</h1>
+    </div>
+    <br>
+    <br>
+    <div id="nameArea">
+    <h2 id="displayName"></h2>
+    <label id="userName" class="disappear" for="userName">Please enter your name</label>
+    <input type="text" id="userNameField" class="disappear" /><br /><br />
+    <button id="submit" class="disappear"> Please click here to submit name </button>
+    </div>
+    <div id="scoresArea">
+    <p id="userScoreLabel" style="display: none">Your Score:</p>
+    <p id="userScore" style="display: none"> </p>
+    <p id="compScoreLabel" style="display: none">My Score: </p>
+    <p id="compScore" style="display: none"> </p>
+    </div>
+    <label id="userChoiceLabel" style="display: none" for="useChoice"
+      >Please enter either rock, paper or scissors!</label
+    >
+    <input type="text" style="display: none" id="userChoiceField" /><br /><br />
+    <button id="userSubmitChoice" style="display: none">
+      Please click to submit your choice!
+    </button>
+    <p id="displayUserChoice" style="display: none"></p>
+    <p id="compChoice" style="display: none"></p>
+    <p id="resultDisplay" style="display: none"></p>
+
+    <script src="/Week 1/bc14_w1d5_hackathon_rps-room5_chris-chris/main.js"></script>
   </body>
 </html>
