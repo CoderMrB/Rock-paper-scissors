@@ -64,8 +64,12 @@ const resultDisplay = document.querySelector('#resultDisplay')
 
 //Function to take name and respond with message
 function respondToName(){
-    let nameField = document.querySelector("#userNameField").value
-    displayName.textContent = `Thanks for coming to play me at rock, paper, scissors ${nameField}!`
+    let nameField = document.querySelector("#userNameInput").value
+    const nameMessage = document.createElement("h2")
+    const newContent = document.createTextNode(`Thanks for coming to play me at rock, paper, scissors ${nameField}!`)
+    nameMessage.appendChild(newContent);
+    const currentDiv = document.getElementById("nameArea");
+    currentDiv.prepend(nameMessage)
     const allGoAway = document.getElementsByClassName('disappear')
     for(const stream of allGoAway){
         stream.style.display = 'none'
