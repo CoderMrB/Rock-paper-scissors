@@ -75,11 +75,12 @@ function respondToName(){
 
     const nameMessage = document.createElement("h2")
     nameMessage.setAttribute('id', 'nameMessage')
-    const newContent = document.createTextNode(`Thanks for coming to play me at rock, paper, scissors ${nameField}!`)
+    const newContent = document.createTextNode(`Thanks for coming to play ${nameField}!`)
     nameMessage.appendChild(newContent);
 
-    welcomeMessageArea.appendChild(compPic)
+    
     welcomeMessageArea.appendChild(nameMessage)
+    welcomeMessageArea.appendChild(compPic)
 
   
     const currentDiv = document.getElementById("nameArea");
