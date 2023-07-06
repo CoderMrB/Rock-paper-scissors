@@ -65,12 +65,27 @@ const resultDisplay = document.querySelector('#resultDisplay')
 //Function to take name and respond with message
 function respondToName(){
     let nameField = document.querySelector("#userNameInput").value
+
+    const welcomeMessageArea = document.createElement("div")
+    welcomeMessageArea.setAttribute('id', 'welcomeMessageArea')
+
+    const compPic = document.createElement("img")
+    compPic.setAttribute('src', './images/computer-monitor-hardware-cute-kawaii-cartoon-vector-17457061.jpg')
+    compPic.setAttribute('id', 'compPic')
+
     const nameMessage = document.createElement("h2")
+    nameMessage.setAttribute('id', 'nameMessage')
     const newContent = document.createTextNode(`Thanks for coming to play me at rock, paper, scissors ${nameField}!`)
     nameMessage.appendChild(newContent);
+
+    welcomeMessageArea.appendChild(compPic)
+    welcomeMessageArea.appendChild(nameMessage)
+
+  
     const currentDiv = document.getElementById("nameArea");
-    currentDiv.prepend(nameMessage)
+    currentDiv.prepend(welcomeMessageArea)
     const allGoAway = document.getElementsByClassName('disappear')
+
     for(const stream of allGoAway){
         stream.style.display = 'none'
     }
@@ -97,7 +112,6 @@ function submitChoice(){
     }else{
         alert("Sorry, that wasn't a valid choice! Please try again")
         userChoice = ""
-        respondToName()
     } 
 }
 
