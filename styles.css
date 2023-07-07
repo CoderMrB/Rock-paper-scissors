@@ -130,7 +130,7 @@ padding:30px;
 }  */
 
 
-@media only screen and (max-width: 393px) {
+@media only screen and (max-width: 500px) {
     body{
         margin:0;
         width: 100vw;
@@ -154,6 +154,7 @@ padding:30px;
         justify-self: center;
         background-color: aquamarine;
         align-items: center;
+        margin-top: 2vh;
     }
 
     #title h1{
@@ -175,16 +176,18 @@ padding:30px;
         border-radius: 10px;
         margin-bottom: 5%;
         text-align: center;
+        margin-top: 2vh;
     }
 
     #submit{
         text-align: center;
         font-size: 4.5vw;
         font-weight: 900;
-        width: 110%;
-        height: 25%;
+        width: 40vw;
+        height: 8vh;
         padding-bottom: 2%;
         justify-self: flex-end;
+        margin-top: 10vh;
     }
 
     #nameArea{
@@ -197,7 +200,8 @@ padding:30px;
         flex-direction: column;
         box-sizing: border-box;
         width: 40vw;
-   
         height: 60%;
+        align-items: center;
+        justify-items: flex-start;
     }
   }
