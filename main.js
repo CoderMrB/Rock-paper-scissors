@@ -84,7 +84,11 @@ function respondToName(){
     const nameMessage = document.createElement("h2")
     nameMessage.setAttribute('id', 'nameMessage')
     const newContent = document.createTextNode(`Thanks for coming to play ${nameField}!`)
+    const choiceMessage = document.createTextNode(`Make your choice! Rock, paper or scissors?`)
     nameMessage.appendChild(newContent);
+    nameMessage.appendChild(document.createElement("br"))
+    nameMessage.appendChild(choiceMessage);
+
 
     
     welcomeMessageArea.appendChild(nameMessage)
@@ -104,7 +108,6 @@ function respondToName(){
     compScoreLabel.style.display = "block"
     compScore.textContent = currentCompScore
     compScore.style.display = "block"
-    userChoiceLabel.style.display = "block"
     userChoiceField.style.display = "block"
     chooseRockButton.style.display = "inline"
     choosePaperButton.style.display = "inline"

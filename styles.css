@@ -9,10 +9,6 @@ body{
     flex-direction: column;
 }
 
-#loadSound{
-    
-}
-
 #title{
     display: flex;
     border: 10px;
@@ -98,6 +94,9 @@ padding:30px;
 
 #nameMessage{
     font-family: 'Share Tech Mono', monospace;
+    display: flex;
+    line-height: 180%;
+    font-size: 2vw;
 }
 
 #submit:hover{
@@ -115,7 +114,8 @@ padding:30px;
 }
 
 #compPic{
-    height: 100%;
+    height: 5vw;
+    margin-right: 3vw;
 }
 
 /* #displayName{
