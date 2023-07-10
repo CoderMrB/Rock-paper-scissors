@@ -108,17 +108,17 @@ function respondToName(){
     compScoreLabel.style.display = "block"
     compScore.textContent = currentCompScore
     compScore.style.display = "block"
-    userChoiceField.style.display = "block"
-    chooseRockButton.style.display = "inline"
-    choosePaperButton.style.display = "inline"
-    chooseScissorsButton.style.display = "inline"
+    chooseRockButton.style.display = "block"
+    choosePaperButton.style.display = "block"
+    chooseScissorsButton.style.display = "block"
 }
 
 
 //Function to take the users choice
 function submitChoice(choice){
     if ((choice === ('rock')) || (choice === ('paper')) || (choice === 'scissors')){
-        displayUserChoice.textContent = `You have chosen ${choice}!`
+        nameMessage.textContent = `You have chosen ${choice}!`
+        userChoice = choice;
         displayUserChoice.style.display = "block"
         generateCompChoice()
     }else{
@@ -139,35 +139,35 @@ function generateCompChoice(){
 //Function to determine and display who won the round
 function displayResult(){
     if (compChoice === userChoice){
-        resultDisplay.textContent = "That one was a draw!"
+        nameMessage.textContent = "That one was a draw!"
         resultDisplay.style.display = "block"
     }else if (compChoice === "rock"){
             if (userChoice === "paper"){
-                resultDisplay.textContent = "Paper beats rock. You won that one!"
+                nameMessage.textContent = "Paper beats rock. You won that one!"
                 currentUserScore++
                 resultDisplay.style.display = "block"
             }else{
-                resultDisplay.textContent = "Rock beats scissors. I won that one!"
+                nameMessage.textContent = "Rock beats scissors. I won that one!"
                 currentCompScore++
                 resultDisplay.style.display = "block"
             } 
     }else if (compChoice === "paper"){
             if (userChoice === "scissors"){
-                resultDisplay.textContent = "Scissors beats paper. You won that one!"
+                nameMessage.textContent = "Scissors beats paper. You won that one!"
                 currentUserScore++
                 resultDisplay.style.display = "block"
             }else{
-                resultDisplay.textContent = "Paper beats rock. I won that one!"
+                nameMessage.textContent = "Paper beats rock. I won that one!"
                 currentCompScore++
                 resultDisplay.style.display = "block"
                 }
     }else if (compChoice === "scissors"){
             if (userChoice === "rock"){
-                resultDisplay.textContent = "Rock beats scissors. You won that one!"
+                nameMessage.textContent = "Rock beats scissors. You won that one!"
                 currentUserScore++
                 resultDisplay.style.display = "block"
             }else{
-                resultDisplay.textContent = "Scissors beats paper. I won that one!"
+                nameMessage.textContent = "Scissors beats paper. I won that one!"
                 currentCompScore++
                 resultDisplay.style.display = "block"
             }
