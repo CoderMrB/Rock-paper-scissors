@@ -26,23 +26,28 @@
         <input type="text" id="userNameInput" class="disappear" />
         <button id="submit" class="disappear"> Please click here to submit name </button>
     </div>
-    <div id="scoresArea">
-    <p id="userScoreLabel" style="display: none">Your Score:</p>
-    <p id="userScore" style="display: none"> </p>
-    <p id="compScoreLabel" style="display: none">My Score: </p>
-    <p id="compScore" style="display: none"> </p>
-    </div>
+    <div id = "userChoiceField">
     <label id="userChoiceLabel" style="display: none" for="useChoice"
-      >Please enter either rock, paper or scissors!</label
-    >
-    <input type="text" style="display: none" id="userChoiceField" /><br /><br />
-    <button id="userSubmitChoice" style="display: none">
-      Please click to submit your choice!
+      >Make your choice! Rock, paper or scissors?</label>
+    <button id="chooseRock" style="display: none">
+      Rock!
     </button>
+    <button id="choosePaper" style="display: none">
+    Paper!
+    </button>
+    <button id="chooseScissors" style="display: none">
+      Scissors!
+    </button>
+    </div>
+    <div id="scoresArea">
+      <p id="userScoreLabel" style="display: none">Your Score:</p>
+      <p id="userScore" style="display: none"> </p>
+      <p id="compScoreLabel" style="display: none">My Score: </p>
+      <p id="compScore" style="display: none"> </p>
+      </div>
     <p id="displayUserChoice" style="display: none"></p>
     <p id="compChoice" style="display: none"></p>
     <p id="resultDisplay" style="display: none"></p>
-
     <script src="./main.js"></script>
   </body>
 </html>

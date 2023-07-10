@@ -25,6 +25,7 @@ If end there, display message indicating winner
 */
 
 
+
 //Variables
 
 //Score variables
@@ -39,6 +40,14 @@ let currentCompScore = 0
 let submitNameButton = document.querySelector("#submit")
 submitNameButton.addEventListener("click", respondToName)
 
+let chooseRockButton = document.querySelector("#chooseRock")
+let choosePaperButton = document.querySelector("#choosePaper")
+let chooseScissorsButton = document.querySelector("#chooseScissors")
+
+chooseRockButton.addEventListener("click",  () => { submitChoice("rock") })
+choosePaperButton.addEventListener("click", () => { submitChoice("paper") })
+chooseScissorsButton.addEventListener("click", () => { submitChoice("scissors") })
+
 //Display name variables
 const displayName = document.querySelector("#displayName");
 
@@ -52,7 +61,6 @@ let userChoice = ""
 const userChoiceLabel = document.querySelector("#userChoiceLabel")
 const userChoiceField = document.querySelector("#userChoiceField")
 const userSubmitChoiceButton = document.querySelector("#userSubmitChoice")
-userSubmitChoiceButton.addEventListener("click", submitChoice)
 const displayUserChoice = document.querySelector('#displayUserChoice')
 
 
@@ -98,16 +106,16 @@ function respondToName(){
     compScore.style.display = "block"
     userChoiceLabel.style.display = "block"
     userChoiceField.style.display = "block"
-    userSubmitChoiceButton.style.display = "block"
+    chooseRockButton.style.display = "inline"
+    choosePaperButton.style.display = "inline"
+    chooseScissorsButton.style.display = "inline"
 }
 
 
 //Function to take the users choice
-function submitChoice(){
-    let userChoiceEntered = userChoiceField.value.toLowerCase()
-    userChoice = userChoiceEntered
-    if ((userChoice === ('rock')) || (userChoice === ('paper')) || (userChoice === 'scissors')){
-        displayUserChoice.textContent = `You have chosen ${userChoice}!`
+function submitChoice(choice){
+    if ((choice === ('rock')) || (choice === ('paper')) || (choice === 'scissors')){
+        displayUserChoice.textContent = `You have chosen ${choice}!`
         displayUserChoice.style.display = "block"
         generateCompChoice()
     }else{
