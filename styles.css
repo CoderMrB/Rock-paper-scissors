@@ -250,6 +250,7 @@ padding:30px;
         padding-bottom: 2%;
         justify-self: flex-end;
         margin-top: 10vh;
+        z-index: 1;
     }
 
     #nameArea{
@@ -288,6 +289,7 @@ padding:30px;
     height:30vh;
     justify-items: space-between;
     align-items: center;
+    z-index: 0;
 }
 
 #userChoiceField{
