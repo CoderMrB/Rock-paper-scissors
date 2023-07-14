@@ -43,8 +43,8 @@ h1 {
 }
 
 #nameArea{
-    padding-top: 2%;
-    padding-bottom: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
     font-size: 1.5vw;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display:flex;
@@ -93,7 +93,13 @@ padding:30px;
     font-weight: 900;
     width: 45%;
     height: 35%;
-    padding-bottom: 2%;
+    padding-bottom: 5%;
+    transition-duration: 0.3s;
+}
+
+#submit:hover{
+    cursor:pointer;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 #nameMessage{
@@ -101,20 +107,26 @@ padding:30px;
     display: flex;
     line-height: 180%;
     font-size: 2vw;
+    white-space: pre-line;
+    text-align: center;
+    width:60vw;
+    justify-content: center;
+   
 }
 
-#submit:hover{
-    cursor:pointer
-}
+
 
 #welcomeMessageArea{
-    height: 10vh;
+  
+    height: 15vh;
     box-sizing: border-box;
     display: flex;
     flex-direction: row-reverse;
     width: 90vw;
-    justify-content: center;
+    justify-content: flex-end;
+    padding-left:20%;
     align-items: center;
+    margin-bottom:3vh;
 }
 
 #compPic{
@@ -125,18 +137,24 @@ padding:30px;
 
 #choicesAndScores{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 5vh;
+    box-sizing: border-box;
 }
 
 #userChoiceField{
-
-    width: 30vw;
+    width: 15vw;
     height: 20vh;
     box-sizing: border-box;
     align-self: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin:0 auto;
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%)
 }
 
 .choicebutton{
@@ -149,10 +167,11 @@ padding:30px;
     text-decoration: none;
     font-size: 1.5vw;
     font-weight: 900;
-    width: 45%;
-    height: 5vh;
-    padding-bottom: 2%;
-    margin: auto auto;
+    width: 75%;
+    height: 6vh;
+    padding-bottom: 3%;
+    padding-top: 1%;
+    margin-bottom: 3vh;
 }
 
 .choicebutton:hover{

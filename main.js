@@ -61,11 +61,8 @@ let userChoice = ""
 const userChoiceLabel = document.querySelector("#userChoiceLabel")
 const userChoiceField = document.querySelector("#userChoiceField")
 const userSubmitChoiceButton = document.querySelector("#userSubmitChoice")
-const displayUserChoice = document.querySelector('#displayUserChoice')
 
-
-//Result variables
-const resultDisplay = document.querySelector('#resultDisplay')
+let choiceMessage = document.createTextNode(`Make your choice! Rock, paper or scissors?`)
 
 
 //Functions
@@ -84,7 +81,6 @@ function respondToName(){
     const nameMessage = document.createElement("h2")
     nameMessage.setAttribute('id', 'nameMessage')
     const newContent = document.createTextNode(`Thanks for coming to play ${nameField}!`)
-    const choiceMessage = document.createTextNode(`Make your choice! Rock, paper or scissors?`)
     nameMessage.appendChild(newContent);
     nameMessage.appendChild(document.createElement("br"))
     nameMessage.appendChild(choiceMessage);
@@ -138,9 +134,7 @@ function respondToName(){
 //Function to take the users choice
 function submitChoice(choice){
     if ((choice === ('rock')) || (choice === ('paper')) || (choice === 'scissors')){
-        nameMessage.textContent = `You have chosen ${choice}!`
         userChoice = choice;
-        displayUserChoice.style.display = "block"
         generateCompChoice()
     }else{
         alert("Sorry, that wasn't a valid choice! Please try again")
@@ -152,53 +146,44 @@ function submitChoice(choice){
 function generateCompChoice(){
     let i = Math.floor(Math.random()*3)
     compChoice = compOptions[i]
-    compChoiceDisplay.textContent = (`The computer has chosen ${(compOptions[i])}`)
-    compChoiceDisplay.style.display = "block"
     displayResult()
     }
 
 //Function to determine and display who won the round
 function displayResult(){
     if (compChoice === userChoice){
-        nameMessage.textContent = "That one was a draw!"
-        resultDisplay.style.display = "block"
+        nameMessage.textContent = `You chose ${userChoice}.\r\n I chose ${compChoice}.\r\n That one was a draw!`
     }else if (compChoice === "rock"){
             if (userChoice === "paper"){
-                nameMessage.textContent = "Paper beats rock. You won that one!"
+                nameMessage.textContent = `You chose ${userChoice}.\r\n I chose ${compChoice}.\r\nPaper beats rock. You won that one!`
                 currentUserScore++
                 userScoreDisplay.textContent = `Your score: ${currentUserScore}`
-                resultDisplay.style.display = "block"
             }else{
-                nameMessage.textContent = "Rock beats scissors. I won that one!"
+                nameMessage.textContent = `You chose ${userChoice}.\r\n I chose ${compChoice}.\r\nRock beats scissors. I won that one!`
                 currentCompScore++
-                resultDisplay.style.display = "block"
             } 
     }else if (compChoice === "paper"){
             if (userChoice === "scissors"){
-                nameMessage.textContent = "Scissors beats paper. You won that one!"
+                nameMessage.textContent = `You chose ${userChoice}.\r\n I chose ${compChoice}.\r\nScissors beats paper. You won that one!`
                 currentUserScore++
                 userScoreDisplay.textContent = `Your score: ${currentUserScore}`
-                resultDisplay.style.display = "block"
             }else{
-                nameMessage.textContent = "Paper beats rock. I won that one!"
+                nameMessage.textContent = `You chose ${userChoice}.\r\n I chose ${compChoice}.\r\nPaper beats rock. I won that one!`
                 currentCompScore++
                 compScoreDisplay.textContent = `My score: ${currentCompScore}`
-                resultDisplay.style.display = "block"
                 }
     }else if (compChoice === "scissors"){
             if (userChoice === "rock"){
-                nameMessage.textContent = "Rock beats scissors. You won that one!"
+                nameMessage.textContent = `You chose ${userChoice}.\r\n I chose ${compChoice}.\r\nRock beats scissors. You won that one!`
                 currentUserScore++
                 userScoreDisplay.textContent = `Your score: ${currentUserScore}`
-                resultDisplay.style.display = "block"
             }else{
-                nameMessage.textContent = "Scissors beats paper. I won that one!"
+                nameMessage.textContent = `You chose ${userChoice}.\r\n I chose ${compChoice}. \r\n Scissors beats paper.I won that one!`
                 currentCompScore++
                 compScoreDisplay.textContent = `My score: ${currentCompScore}`
-               
-                resultDisplay.style.display = "block"
             }
-    }userScore.textContent = currentUserScore
-    compScore.textContent = currentCompScore
+    }
+    // userScore.textContent = currentUserScore
+    // compScore.textContent = currentCompScore
 }
 
