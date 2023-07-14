@@ -192,23 +192,6 @@ padding:30px;
     justify-self: flex-start;
 }
 
-/* #displayName{
-    display: flex;
-    text-align:center;
-}
-
-#scoresArea{
-    padding-left: 400px;
-    padding-right: 263px;
-    width: 50vw;
-    display:inline-flex;
-    background-color: #dad8d898;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 1.7rem;
-    justify-content:space-around
-}  */
-
-
 @media only screen and (max-width: 500px) {
     body{
         margin:0;
@@ -270,17 +253,83 @@ padding:30px;
     }
 
     #nameArea{
-        margin-top: 10%;
-        padding-top: 30%;
-        padding-bottom: 1%;
-        font-size: 1.5vw;
+        font-size: 10vw;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         display:flex;
         flex-direction: column;
         box-sizing: border-box;
         width: 40vw;
-        height: 60%;
+        height: 10vh;
         align-items: center;
         justify-items: flex-start;
     }
+
+    
+#nameMessage{
+    font-family: 'Share Tech Mono', monospace;
+    display: flex;
+    line-height: 110%;
+    font-size: 4vw;
+    white-space: pre-line;
+    text-align: center;
+    width:62vw;
+    justify-content: center;
+   
+}
+
+#compPic{
+    height: 12vw;
+    margin-right: 0vw;
+}
+#choicesAndScores{
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    height:30vh;
+    justify-items: space-between;
+    align-items: center;
+}
+
+#userChoiceField{
+    height: 5vh;
+    box-sizing: border-box;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90vw;
+    align-items: center;
+}
+
+.choicebutton{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #7fffd4;
+    border: 0.5vh none black;
+    border-radius: 15px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size: 5vw;
+    font-weight: 900;
+    width: 25vw;
+    height: 3vh;
+    padding-bottom: 8%;
+    padding-top: 1%;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    box-sizing: border-box;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  #scoresArea{
+    display:flex;
+    box-sizing: border-box;
+    width: 90vw;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 5vw;
+    margin-top: 10vh;
+}
+
   }
