@@ -1,4 +1,4 @@
-A project to practice responsive design, working with the DOM and deployment.
+<strong>A project to practice responsive design, working with the DOM and deployment.</strong>
 
 At the end of the very first week of the School of Code bootcamp - in which we had learned the basics of Javascript - we were tasked with making a rock, paper, scissors game in an afternoon. Which we did, without any sort of styling, and making use mostly of inputs and popups.
 
