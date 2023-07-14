@@ -29,10 +29,6 @@ If end there, display message indicating winner
 //Variables
 
 //Score variables
-let userScoreLabel = document.querySelector("#userScoreLabel")
-let compScoreLabel = document.querySelector("#compScoreLabel")
-let userScore = document.querySelector("#userScore")
-let compScore = document.querySelector("#compScore")
 let currentUserScore = 0
 let currentCompScore = 0
 
@@ -48,21 +44,12 @@ chooseRockButton.addEventListener("click",  () => { submitChoice("rock") })
 choosePaperButton.addEventListener("click", () => { submitChoice("paper") })
 chooseScissorsButton.addEventListener("click", () => { submitChoice("scissors") })
 
-//Display name variables
-const displayName = document.querySelector("#displayName");
-
 //Computer choice variables
 const compOptions = ["rock", "paper", "scissors"]
-compChoiceDisplay = document.querySelector('#compChoice')
 let compChoice=""
 
 //User choice variables
 let userChoice = ""
-const userChoiceLabel = document.querySelector("#userChoiceLabel")
-const userChoiceField = document.querySelector("#userChoiceField")
-const userSubmitChoiceButton = document.querySelector("#userSubmitChoice")
-
-let choiceMessage = document.createTextNode(`Make your choice! Rock, paper or scissors?`)
 
 
 //Functions
@@ -80,18 +67,13 @@ function respondToName(){
 
     const nameMessage = document.createElement("h2")
     nameMessage.setAttribute('id', 'nameMessage')
-    const newContent = document.createTextNode(`Thanks for coming to play ${nameField}!`)
+    const newContent = document.createTextNode(`Thanks for coming to play ${nameField}!\r\nMake your choice - rock, paper or scissors?`)
     nameMessage.appendChild(newContent);
-    nameMessage.appendChild(document.createElement("br"))
-    nameMessage.appendChild(choiceMessage);
 
-
-    
     welcomeMessageArea.appendChild(nameMessage)
     welcomeMessageArea.appendChild(compPic)
 
-  
-    const currentDiv = document.getElementById("nameArea");
+      const currentDiv = document.getElementById("nameArea");
     currentDiv.prepend(welcomeMessageArea)
     const allGoAway = document.getElementsByClassName('disappear')
 
@@ -117,37 +99,16 @@ function respondToName(){
     userScoreDisplay.textContent = `Your score: ${currentUserScore}`
     compScoreDisplay.textContent = `My score: ${currentCompScore}`
 
-    /*Scores area removed from HTML
-
- <div id="scoresArea">
-      <p id="userScoreLabel" style="display: none">Your Score:</p>
-      <p id="userScore" style="display: none"> </p>
-      <p id="compScoreLabel" style="display: none">My Score: </p>
-      <p id="compScore" style="display: none"> </p>
-      </div>
-    </div>
-
-    */
 }
 
 
 //Function to take the users choice
 function submitChoice(choice){
-    if ((choice === ('rock')) || (choice === ('paper')) || (choice === 'scissors')){
         userChoice = choice;
-        generateCompChoice()
-    }else{
-        alert("Sorry, that wasn't a valid choice! Please try again")
-        userChoice = ""
+        let i = Math.floor(Math.random()*3);
+        compChoice = compOptions[i];
+        displayResult()
     } 
-}
-
-//Function to take generate the computers choice
-function generateCompChoice(){
-    let i = Math.floor(Math.random()*3)
-    compChoice = compOptions[i]
-    displayResult()
-    }
 
 //Function to determine and display who won the round
 function displayResult(){
@@ -157,7 +118,6 @@ function displayResult(){
             if (userChoice === "paper"){
                 nameMessage.textContent = `You chose ${userChoice}.\r\n I chose ${compChoice}.\r\nPaper beats rock. You won that one!`
                 currentUserScore++
-                userScoreDisplay.textContent = `Your score: ${currentUserScore}`
             }else{
                 nameMessage.textContent = `You chose ${userChoice}.\r\n I chose ${compChoice}.\r\nRock beats scissors. I won that one!`
                 currentCompScore++
@@ -166,24 +126,21 @@ function displayResult(){
             if (userChoice === "scissors"){
                 nameMessage.textContent = `You chose ${userChoice}.\r\n I chose ${compChoice}.\r\nScissors beats paper. You won that one!`
                 currentUserScore++
-                userScoreDisplay.textContent = `Your score: ${currentUserScore}`
             }else{
                 nameMessage.textContent = `You chose ${userChoice}.\r\n I chose ${compChoice}.\r\nPaper beats rock. I won that one!`
                 currentCompScore++
-                compScoreDisplay.textContent = `My score: ${currentCompScore}`
                 }
     }else if (compChoice === "scissors"){
             if (userChoice === "rock"){
                 nameMessage.textContent = `You chose ${userChoice}.\r\n I chose ${compChoice}.\r\nRock beats scissors. You won that one!`
                 currentUserScore++
-                userScoreDisplay.textContent = `Your score: ${currentUserScore}`
+                
             }else{
                 nameMessage.textContent = `You chose ${userChoice}.\r\n I chose ${compChoice}. \r\n Scissors beats paper.I won that one!`
                 currentCompScore++
-                compScoreDisplay.textContent = `My score: ${currentCompScore}`
             }
-    }
-    // userScore.textContent = currentUserScore
-    // compScore.textContent = currentCompScore
+    }userScoreDisplay.textContent = `Your score: ${currentUserScore}`;
+    compScoreDisplay.textContent = `My score: ${currentCompScore}`;
 }
+
 
