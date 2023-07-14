@@ -4,7 +4,7 @@ At the end of the very first week of the School of Code bootcamp - in which we h
 
 16 weeks later, having graduated the bootcamp, I challenged myself to take this code and use it to test and develop my knowledge of responsive design, working with the DOM to dynamically access and update the structure of a webpage, and deploying.
 
-The super-exciting game of rock paper scissors is available for you to test <a href="https://rps-mrb.vercel.app/" target='blank' >here</a>. 
+The super-exciting game of rock paper scissors is available for you to test <a href="https://rps-mrb.vercel.app/" target="blank">here</a>. 
 
 It might not win any awards for styling or gameplay in its current form, but I'm really pleased with the use of mediaquery to make the page presentable on vertical mobile and on desktop, and the use of JS to update elements and textcontent via the DOM!
 
