@@ -38,6 +38,10 @@ h1 {
     padding-left: 1%; 
 }
 
+#nameAndScores{
+    display: flex;
+}
+
 #nameArea{
     padding-top: 2%;
     padding-bottom: 2%;
@@ -118,6 +122,12 @@ padding:30px;
     margin-right: 3vw;
 }
 
+
+#choicesAndScores{
+    display: flex;
+    justify-content: center;
+}
+
 #userChoiceField{
 
     width: 30vw;
@@ -149,6 +159,18 @@ padding:30px;
     cursor: pointer;
     background-color: #f1f5f2;
     flex-grow: calc(0.2);
+}
+
+#scoresArea{
+    display:flex;
+    box-sizing: border-box;
+    width: 30vw;
+    justify-content: space-around;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 2vw;
+    align-self: center;
+    justify-self: flex-start;
 }
 
 /* #displayName{

@@ -29,7 +29,7 @@ If end there, display message indicating winner
 //Variables
 
 //Score variables
-let  userScoreLabel = document.querySelector("#userScoreLabel")
+let userScoreLabel = document.querySelector("#userScoreLabel")
 let compScoreLabel = document.querySelector("#compScoreLabel")
 let userScore = document.querySelector("#userScore")
 let compScore = document.querySelector("#compScore")
@@ -102,15 +102,36 @@ function respondToName(){
     for(const stream of allGoAway){
         stream.style.display = 'none'
     }
-    userScoreLabel.style.display = "block"
-    userScore.style.display = "block"
-    userScore.textContent = currentUserScore
-    compScoreLabel.style.display = "block"
-    compScore.textContent = currentCompScore
-    compScore.style.display = "block"
+
     chooseRockButton.style.display = "block"
     choosePaperButton.style.display = "block"
     chooseScissorsButton.style.display = "block"
+
+    const choicesAndScores = document.getElementById("choicesAndScores")
+    const scoresArea = document.createElement("div")
+    scoresArea.setAttribute('id', 'scoresArea')
+    const userScoreDisplay =document.createElement("p")
+    userScoreDisplay.setAttribute('id', 'userScoreDisplay')
+    const compScoreDisplay =document.createElement("p")
+    compScoreDisplay.setAttribute('id', 'compScoreDisplay')
+    scoresArea.appendChild(userScoreDisplay)
+    scoresArea.appendChild(compScoreDisplay)
+    choicesAndScores.prepend(scoresArea)
+
+    userScoreDisplay.textContent = `Your score: ${currentUserScore}`
+    compScoreDisplay.textContent = `My score: ${currentCompScore}`
+
+    /*Scores area removed from HTML
+
+ <div id="scoresArea">
+      <p id="userScoreLabel" style="display: none">Your Score:</p>
+      <p id="userScore" style="display: none"> </p>
+      <p id="compScoreLabel" style="display: none">My Score: </p>
+      <p id="compScore" style="display: none"> </p>
+      </div>
+    </div>
+
+    */
 }
 
 
@@ -145,6 +166,7 @@ function displayResult(){
             if (userChoice === "paper"){
                 nameMessage.textContent = "Paper beats rock. You won that one!"
                 currentUserScore++
+                userScoreDisplay.textContent = `Your score: ${currentUserScore}`
                 resultDisplay.style.display = "block"
             }else{
                 nameMessage.textContent = "Rock beats scissors. I won that one!"
@@ -155,24 +177,28 @@ function displayResult(){
             if (userChoice === "scissors"){
                 nameMessage.textContent = "Scissors beats paper. You won that one!"
                 currentUserScore++
+                userScoreDisplay.textContent = `Your score: ${currentUserScore}`
                 resultDisplay.style.display = "block"
             }else{
                 nameMessage.textContent = "Paper beats rock. I won that one!"
                 currentCompScore++
+                compScoreDisplay.textContent = `My score: ${currentCompScore}`
                 resultDisplay.style.display = "block"
                 }
     }else if (compChoice === "scissors"){
             if (userChoice === "rock"){
                 nameMessage.textContent = "Rock beats scissors. You won that one!"
                 currentUserScore++
+                userScoreDisplay.textContent = `Your score: ${currentUserScore}`
                 resultDisplay.style.display = "block"
             }else{
                 nameMessage.textContent = "Scissors beats paper. I won that one!"
                 currentCompScore++
+                compScoreDisplay.textContent = `My score: ${currentCompScore}`
+               
                 resultDisplay.style.display = "block"
             }
     }userScore.textContent = currentUserScore
     compScore.textContent = currentCompScore
 }
 
-    
