@@ -11,8 +11,8 @@ It wont win any awards for styling or gameplay! But I'm pleased that I got to gr
 
 
 <div style=display:flex align="center">
-<img src="https://github.com/CoderMrB/Rock-paper-scissors/blob/main/images/Laptoplanding.png" width="40%" height="35%" alt="image of landing page on laptop"/>
-<img src="https://github.com/CoderMrB/Rock-paper-scissors/blob/main/images/Laptopgame.png" width="40%" height="35%" alt="image of game page on laptop"/>
+<img src="https://github.com/CoderMrB/Rock-paper-scissors/blob/main/images/Laptoplanding.png" width="50%" height="50%" alt="image of landing page on laptop"/>
+<img src="https://github.com/CoderMrB/Rock-paper-scissors/blob/main/images/Laptopgame.png" width="50%" height="50%" alt="image of game page on laptop"/>
 </div>
 
 <div style=display:flex align="center">
