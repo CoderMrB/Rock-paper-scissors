@@ -8,4 +8,11 @@ This super-exciting game of rock paper scissors is available for you to test <a 
 
 It wont win any awards for styling or gameplay! But I'm pleased that I got to grips with media query to make the page presentable on vertical mobile and on desktop, with the use of JS to update elements and textcontent via the DOM, and that it's a real live site that anyone can visit!
 
+
+
+<div style=display:flex align="center">
+<img src="[https://github.com/CoderMrB/Pyng-UI-challenge/blob/main/assets/wireframe.png](https://github.com/CoderMrB/Rock-paper-scissors/blob/main/images/Laptoplanding.png)" width="30%" height="30%" alt="image of original wireframe"/>
+<img src="https://github.com/CoderMrB/Pyng-UI-challenge/blob/main/assets/AppScreenshot.png" width="28%" height="28%" alt="image of UI designed in react native running on LG"/>
+</div>
+
 I'd love to come back to this from time to time. Next steps will be to ensure responsiveness horizontally on mobile and on tablets, and to work on some more interesting design features. Perhaps even connectint to an SQL database and adding auth to keep a high score!?
